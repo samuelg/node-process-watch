@@ -1,0 +1,23 @@
+{
+  "curly": true,
+  "eqeqeq": true,
+  "immed": true,
+  "latedef": false,
+  "newcap": true,
+  "noarg": true,
+  "sub": true,
+  "undef": true,
+  "unused": false,
+  "boss": true,
+  "eqnull": true,
+  "node": true,
+  "quotmark": true,
+  "camelcase": true,
+  "maxlen": 80,
+  "globals": {
+    "node": true,
+    "describe": false,
+    "it": false,
+    "beforeEach": false
+  }
+}
