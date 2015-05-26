@@ -18,6 +18,9 @@ var process = pw.watch('node app.js', parentPid)
   .killed(function() {
     // process was killed
   })
+  .restarted(function() {
+    // process has been restarted
+  })
   .start(100);  // watch every 100 milliseconds (default)
 
 process.kill();

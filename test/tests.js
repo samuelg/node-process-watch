@@ -37,6 +37,21 @@ describe('process-watch', function () {
       .start();
   });
 
+  it('should call restarted handler when restarted', function(done) {
+    watchedProcess
+      .error(function(err) {
+        throw new Error('should not have been called');
+      })
+      .started(function() {
+        process.kill(child.pid);
+      })
+      .restarted(done)
+      .killed(function() {
+        child = spawn('watch', ['ls', '-l']);
+      })
+      .start();
+  });
+
   it('should call killed handler when killed', function (done) {
     watchedProcess
       .error(function(err) {
@@ -132,7 +147,7 @@ describe('process-watch', function () {
           done();
         } else {
           child = spawn('watch', ['ls', '-l']);
-          
+
           setTimeout(function() {
             process.kill(child.pid);
           }, 500);
