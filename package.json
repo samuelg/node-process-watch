@@ -1,6 +1,6 @@
 {
   "name": "process-watch",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Watch and manage OS processes",
   "main": "lib/process.js",
   "scripts": {
