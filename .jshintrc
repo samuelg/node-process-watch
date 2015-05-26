@@ -18,6 +18,7 @@
     "node": true,
     "describe": false,
     "it": false,
-    "beforeEach": false
+    "beforeEach": false,
+    "afterEach": false
   }
 }

@@ -12,13 +12,19 @@ var process = pw.watch('node app.js', parentPid)
   .error(function(err) {
     // an error occurred
   })
+  .started(function() {
+    // process started
+  })
   .killed(function() {
     // process was killed
-  });
+  })
+  .start(100);  // watch every 100 milliseconds (default)
 
 process.kill();
 process.unwatch();
 ```
+
+Note that the process being watched may not exist at the time the watcher is initialized.
 
 # License
 
